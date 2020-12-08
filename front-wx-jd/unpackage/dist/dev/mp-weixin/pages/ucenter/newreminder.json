@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zhilin-picker": "/components/zhilin-picker/zhilin-picker",
+    "mx-date-picker": "/components/mx-datepicker/mx-datepicker"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "pages": [
+    "pages/wxauthorize/wxauthorize",
+    "pages/index/index",
+    "pages/category/category",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/instorage/instorage",
+    "pages/outstorage/outstorage",
+    "pages/uchat/uchat",
+    "pages/ucenter/ucenter",
+    "pages/infomation/infomation",
+    "pages/search/search",
+    "pages/ucenter/about_us",
+    "pages/ucenter/help_u",
+    "pages/ucenter/product",
+    "pages/ucenter/customer",
+    "pages/index/supplierview",
+    "pages/index/customerview",
+    "pages/ucenter/budget",
+    "pages/ucenter/stock",
+    "pages/ucenter/order",
+    "pages/list/customerlist",
+    "pages/detail/customerdetail",
+    "pages/list/orderlist",
+    "pages/detail/orderdetail",
+    "pages/ucenter/reminder",
+    "pages/ucenter/newreminder",
+    "pages/ucenter/u_company_manage",
+    "pages/ucenter/u_user_mangage",
+    "pages/list/u_company_list",
+    "pages/ucenter/newinform",
+    "pages/list/Informlist",
+    "pages/location/index/index",
+    "pages/ucenter/daytask",
+    "pages/ucenter/daytask_manage",
+    "pages/ucenter/daytask_staff",
+    "pages/list/stocklist",
+    "pages/list/budgetlist",
+    "pages/detail/companydetail",
+    "pages/ucenter/u_user_info",
+    "pages/detail/stockdetail",
+    "pages/uchat/unchatson",
+    "pages/history/history",
+    "pages/table/locationtable",
+    "pages/table/tasktable",
+    "pages/ucenter/apply",
+    "pages/ucenter/newapply",
+    "pages/ucenter/pcustomer"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "君鼎文化",
+    "navigationBarBackgroundColor": "#3f448a"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#344ab2",
+    "backgroundColor": "#13121e",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "static/tabBar/indexS.png",
+        "iconPath": "static/tabBar/index.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/customerlist",
+        "selectedIconPath": "static/tabBar/tubiaoS.png",
+        "iconPath": "static/tabBar/tubiao.png",
+        "text": "客户"
+      },
+      {
+        "pagePath": "pages/list/orderlist",
+        "selectedIconPath": "static/tabBar/searchS.png",
+        "iconPath": "static/tabBar/search.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/uchat/uchat",
+        "selectedIconPath": "static/tabBar/tongjiS.png",
+        "iconPath": "static/tabBar/tongji.png",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/ucenter/ucenter",
+        "selectedIconPath": "static/tabBar/ucenterS.png",
+        "iconPath": "static/tabBar/ucenter.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位权限"
+    }
+  },
+  "usingComponents": {
+    "van-button": "/wxcomponents/vant/button/index",
+    "van-cell": "/wxcomponents/vant/cell/index",
+    "van-cell-group": "/wxcomponents/vant/cell-group/index",
+    "van-search": "/wxcomponents/vant/search/index",
+    "van-icon": "/wxcomponents/vant/icon/index",
+    "van-field": "/wxcomponents/vant/field/index",
+    "van-loading": "/wxcomponents/vant/loading/index",
+    "van-info": "/wxcomponents/vant/info/index"
+  },
+  "sitemapLocation": "sitemap40.json"
+}

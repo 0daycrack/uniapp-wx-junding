@@ -1,0 +1,16 @@
+
+.bottom-state-nc{
+	border-bottom: 5rpx solid #f81714;
+	-webkit-border-bottom-right-radius: inherit;
+	        border-bottom-right-radius: inherit;
+	/* border-radius: 10rpx; */
+	padding-bottom: 10rpx;
+}
+.bottom-state-c{
+	border-bottom: 5rpx solid #9aff66;
+	-webkit-border-bottom-right-radius: inherit;
+	        border-bottom-right-radius: inherit;
+	/* border-radius: 10rpx; */
+	padding-bottom: 10rpx;
+}
+
