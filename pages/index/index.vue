@@ -36,8 +36,8 @@
 							<text class="text-cyan">未读通知</text>
 						</view>
 						<view class="flex flex-direction align-center" @tap="inre">
-							<text class="text-orange text-bold">{{remindercount ? remindercount : "暂无"}}</text>
-							<text class="text-cyan">未处理事项</text>
+							<text class="text-orange text-bold">{{applycount ? applycount : "暂无"}}</text>
+							<text class="text-cyan">未处理申请</text>
 						</view>
 					</view>
 				</view>
@@ -112,6 +112,7 @@
 				informcount:'',
 				locatestate:'',
 				companyname:'',
+				applycount:'',
 				token:'',
 				userlevel:uni.getStorageSync('userlevel'),
 			}
@@ -159,6 +160,7 @@
 				this.refreshUser();
 				this.checkUpdate();
 				this.checkSession();
+				this.getApplyCount();
 			},
 			/**
 			 * 加载今日数据
@@ -249,6 +251,19 @@
 							console.log("%s","用户打卡信息:",data);
 							this.locatestate = '已打卡';	
 						}				
+					}
+				});
+			},
+			getApplyCount(){
+				api.get({
+					url: 'getapplycount',
+					data: {						
+						openid:uni.getStorageSync('openid'),
+						applystate:0,
+					},
+					success: data => {
+						console.log("%s","用户上报信息:",data);
+						this.applycount = data;						
 					}
 				});
 			},

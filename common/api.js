@@ -14,8 +14,8 @@ var device_type = 'wxapp'
 var app = getApp();
 // var host = "https://jiawei.xr1228.com";//替换为自己的域名,小程序需要https
 // var host = "https://jiawei.xr1228.com";
-// var host = "http://0.0.0.0:8000";
-var host = "https://jiawei.xr1228.com";
+var host = "http://0.0.0.0:8000";
+// var host = "https://jiawei.xr1228.com";
 
 
 module.exports = {	
