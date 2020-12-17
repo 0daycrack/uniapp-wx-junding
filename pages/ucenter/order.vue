@@ -83,8 +83,12 @@
 					<text class="text-red">*</text>
 					<input placeholder="请输入销售金额" name="ordermoney" type="digit" v-model="ordermoney"></input>
 				</view>
+				<view class="cu-form-group">
+					<view class="title">订单单值</view>
+					<input placeholder="请输入订单单值(非必须)" name="ordervalue" type="digit" v-model="ordervalue"></input>
+				</view>
 				<view class="cu-form-group ">
-					<view class="title">日期选择</view>
+					<view class="title">下定日期</view>
 					<picker mode="date" :value="date" start="2000-01-01" end="2999-12-31" @change="DateChange">
 						<view class="picker">
 							{{date}}
@@ -139,6 +143,7 @@
 				newstockremain:'',
 				ordernumber:'',
 				ordermoney:0,
+				ordervalue:'',
 				orderdeposit:0,
 				orderdepositflag:'',
 				loading:false
@@ -396,6 +401,7 @@
 						ordermoney      : this.ordermoney,
 						ordernumber		:params['ordernumber'],
 						orderdate       :this.date,
+						ordervalue: this.ordervalue,
 						orderremark        : params['desc'],
 						orderdepositflag :this.moneypicker[this.moneyindex],
 						stockid				:this.stockid

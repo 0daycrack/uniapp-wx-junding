@@ -23,12 +23,13 @@
             <t-table @change="change">
                 <t-tr>
                     <t-th>姓名</t-th>
+					<t-th>签到地点</t-th>
                     <t-th>签到时间</t-th>
                     <t-th>签退时间</t-th>
-                    <!-- <t-th>爱好</t-th> -->
                 </t-tr>
                 <t-tr v-for="item in tableList" :key="item.name">
                     <t-td>{{ item.name }}</t-td>
+					<t-td>{{ item.signaddress ? item.signaddress:"未打卡" }}</t-td>
 					<t-td>{{ item.starttime ? item.starttime:"未打卡"}}</t-td>
                     <t-td>{{ item.endtime ? item.endtime:"未打卡"}}</t-td>
                     <!-- <t-td>{{ item.hobby }}</t-td> -->

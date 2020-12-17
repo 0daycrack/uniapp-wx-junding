@@ -34,7 +34,7 @@
 					<!-- <input placeholder="来源" name="from"></input> -->
 					<picker @change="fromChange" :value="fromindex" :range="frompicker" name='from'>
 						<view class="picker">
-							{{fromindex>-1?frompicker[index]:'请选择客户来源'}}
+							{{fromindex>-1?frompicker[fromindex]:'请选择客户来源'}}
 						</view>
 					</picker>
 				</view>
