@@ -160,7 +160,7 @@
 							});
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 							// api.post({
 							// 	url: 'user/public/logout',
 							// 	method: 'POST',

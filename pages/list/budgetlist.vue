@@ -171,7 +171,7 @@
 								url:"../index/index"
 							});setTimeout((e => {
 												uni.navigateBack();
-											}), 2500);
+											}), 500);
 
 				        } else if (res.cancel) {
 				            console.log('用户取消删除');

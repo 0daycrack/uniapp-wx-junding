@@ -89,7 +89,7 @@
 							// uni.setStorageSync('user', data.data.user)
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 						}
 						if (res['code'] == "failed") {
 							this.loading = false;

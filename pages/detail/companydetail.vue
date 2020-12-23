@@ -116,7 +116,7 @@
 							})
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 						}else{
 						uni.showToast({
 							title: '潜伏失败',

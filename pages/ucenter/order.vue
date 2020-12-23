@@ -143,7 +143,7 @@
 				newstockremain:'',
 				ordernumber:'',
 				ordermoney:0,
-				ordervalue:'',
+				ordervalue:0,
 				orderdeposit:0,
 				orderdepositflag:'',
 				loading:false
@@ -428,7 +428,7 @@
 							});
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 						}
 						if (res.code=="failed") {
 							this.loading = false;

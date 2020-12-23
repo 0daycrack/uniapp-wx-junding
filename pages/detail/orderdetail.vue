@@ -60,6 +60,11 @@
 					<view class="action" v-else>{{List.orderdeposit}}</view>
 				</view>
 				<view class="cu-item" >
+					<view class="content">订单单值：</view>
+					<input class="edit-input" v-model="ordervalue" name="ordervalue"  v-if="allowedit"></input>
+					<view class="action" v-else>{{List.ordervalue}}</view>
+				</view>
+				<view class="cu-item" >
 					<view class="content">商品名称：</view>
 					<view class="action">{{List.stockname}}</view>
 				</view>
@@ -160,6 +165,7 @@
 				customerid:"",
 				stockid:"",
 				ordermoney:"",
+				ordervalue:"",
 				orderdeposit:"",
 				ordersendname:"",
 				ordersendphone:"",
@@ -202,6 +208,8 @@
 						this.orderstate = this.List.orderstate
 						this.stockid = this.List.stockid
 						this.ordermoney = this.List.ordermoney
+						this.ordernumber = this.List.ordernumber
+						this.ordervalue =  this.List.ordervalue
 						this.orderdeposit = this.List.orderdeposit
 						this.ordersendname = this.List.ordersendname
 						this.ordersendphone = this.List.ordersendphone
@@ -327,7 +335,7 @@
 			addHistory:function(){
 				let modlist={'orderstate':'订单状态','ordermoney':'订单金额','orderdeposit':'订单定金',
 				'ordersendname':'送货人','ordersendphone':'送货人电话','ordersenddate':'送货日期',
-				'orderfeedback':'客户反馈'			
+				'orderfeedback':'客户反馈','ordervalue':'订单单值'			
 				};
 				for(let field in modlist){
 					var at=this;
@@ -382,6 +390,7 @@
 									stockid : this.stockid,
 									ordermoney : this.ordermoney,
 									orderdeposit : this.orderdeposit,
+									ordervalue : this.ordervalue,
 									ordersendname : this.ordersendname,
 									ordersendphone : this.ordersendphone,
 									ordersenddate : this.ordersenddate,
@@ -445,7 +454,7 @@
 					url: 'recoverstock',
 					data: {
 						stockid: this.stockid,
-						ordermoney:this.ordermoney
+						ordernumber:this.ordernumber
 					},
 					success: (res) => {
 						console.log(res);
@@ -484,7 +493,7 @@
 							})
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 						}else{
 						uni.showToast({
 							title: '订单删除失败',

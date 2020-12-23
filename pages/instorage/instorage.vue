@@ -144,7 +144,7 @@
 						})
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 						}
 					}
 				});				

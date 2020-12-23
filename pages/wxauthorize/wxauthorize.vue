@@ -118,7 +118,7 @@
 									});
 									setTimeout((e => {
 										uni.navigateBack();
-									}), 2500);
+									}), 500);
 								}
 								_this.openid=res['openid']
                                 //openId、或SessionKdy存储//隐藏loading

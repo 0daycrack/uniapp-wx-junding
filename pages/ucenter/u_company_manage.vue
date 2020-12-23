@@ -256,7 +256,7 @@
 							});
 							setTimeout((e => {
 								uni.navigateBack();
-							}), 2500);
+							}), 500);
 							// uni.setStorageSync('upload', 1)
 						}
 						if (res  == "") {
