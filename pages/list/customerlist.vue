@@ -16,7 +16,7 @@
 			</view>
 			<view class="search-form round" v-if="index < 2">
 				<text class="cuIcon-search"></text>
-				<input @focus="InputFocus" @blur="InputBlur" v-model="search_text" :adjust-position="false" type="text" placeholder="请输入搜索内容" confirm-type="search">
+				<input @focus="InputFocus" @blur="InputBlur" v-model="search_text" :adjust-position="false" :type="text" :placeholder='"总客户数:"+totoalcus':confirm-type="search">
 			</view>
 			<view class="search-form round flex justify-center" v-else-if ="index == 2">
 				<view style="border-bottom: 1px solid #d1d1d1;padding-left: 20upx;"
@@ -82,12 +82,13 @@
 				scrollHeight:'',
 				list:[],
 				search_text:'',
+				totoalcus:0,
 				reachbottom:'',
 				themeColor: '#000000',
 				                filterResult: '',
 				                menuList: [{
 				                        'title': '成交状态',
-				                        'detailTitle': '请选择职位类型（单选）',
+				                        'detailTitle': '请选择客户成交状态（单选）',
 				                        'isMutiple': false,
 				                        'key': 'customeractive',
 				                        'detailList': [{
@@ -102,6 +103,18 @@
 				                                'title': '已成交',
 				                                'value': '1'
 				                            },
+											{
+											    'title': 'A类客户',
+											    'value': 'A'
+											},
+											{
+											    'title': 'B类客户',
+											    'value': 'B'
+											},
+											{
+											    'title': 'C类客户',
+											    'value': 'C'
+											},
 				                        ]
 				
 				                    },
@@ -228,6 +241,7 @@
 						// console.log(res.data);
 						if (res!="") {
 							this.list = res
+							this.totoalcus=this.list.length
 							console.log(res)
 						}else{
 						uni.showToast({
@@ -237,6 +251,7 @@
 						});
 						this.list = '';
 						this.customername = '';
+						this.totoalcus=0;
 					}
 					}
 				});	

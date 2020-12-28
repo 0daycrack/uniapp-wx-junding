@@ -104,30 +104,67 @@
 			}).exec();
 		},
 		onShow(){
-					api.get({
-						url: 'searchorder',
-						data: {
-							companyid:uni.getStorageSync('companyid'),
-							openid:uni.getStorageSync('openid'),
-							level:uni.getStorageSync('userlevel'),
-							customername: '',
-							orderid: ''
-						},
-						success: (res) => {
-							// console.log(res.data);
-							if (res!="") {
-								this.list = res
-								console.log(res)														
-							}else{
+					if(uni.getStorageSync('customerid')!=""){
+						console.log(uni.getStorageSync('customerid'))
+						api.get({
+							url:'sobycustomer',
+							data: {
+								customerid:uni.getStorageSync('customerid'),
+								companyid:uni.getStorageSync('companyid'),
+								openid:uni.getStorageSync('openid'),
+								level:uni.getStorageSync('userlevel'),
+								customername: '',
+								orderid: ''
+							},
+							success: (res) => {
+								// console.log(res.data);
+								if (res!="") {
+									this.list = res
+									console.log(res)														
+								}else{
+								uni.showToast({
+									title: '无订单信息',
+									icon: "none",
+									duration: 1000
+								});
+								this.list = '';
+							}
+							//清空customerid
+							uni.setStorageSync("customerid","")
 							uni.showToast({
-								title: '无订单信息',
-								icon: "none",
-								duration: 1000
-							});
-							this.list = '';
-						}
-						}
-					});			
+								title:"【"+this.list[0].customername+"】"+"订单"
+							})
+							}
+						});
+					}else{
+						console.log("加载全部客户")
+						api.get({
+							url: 'searchorder',
+							data: {
+								companyid:uni.getStorageSync('companyid'),
+								openid:uni.getStorageSync('openid'),
+								level:uni.getStorageSync('userlevel'),
+								customername: '',
+								orderid: ''
+							},
+							success: (res) => {
+								// console.log(res.data);
+								if (res!="") {
+									this.list = res
+									console.log(res)														
+								}else{
+								uni.showToast({
+									title: '无订单信息',
+									icon: "none",
+									duration: 1000
+								});
+								this.list = '';
+							}
+							}
+						});	
+					}
+						
+		
 		},
 		methods: {
 			change: function(e) {

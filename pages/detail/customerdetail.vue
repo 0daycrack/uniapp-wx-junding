@@ -95,6 +95,12 @@
 					<view class="action">{{List.customeractive=='0' ? "未成交": "已成交"}}</view>
 				</view>
 				<view class="cu-item" >
+					<view class="content">订单数量：</view>
+					<view class="action">
+						<view class="cu-tag round bg-purple light" @tap="toOrder(List.customerid)">{{List.ordercount}}</view>
+					</view>
+				</view>
+				<view class="cu-item" >
 					<view class="content">通话次数：</view>
 					<view class="action">
 						<view class="cu-tag round bg-orange light">{{List.customercalltime}}</view>
@@ -149,6 +155,7 @@
 				filterindex:-1,
 				customerfilter:'',
 				picker:['A','B','C'],
+				ordercount:'',
 				customerid:'',
 				customername:'',
 				customerphone:'',
@@ -184,6 +191,7 @@
 						this.customerinterest= this.List.customerinterest
 						this.customerold = this.List.customerold,
 						this.customerbody = this.List.customerbody,
+						this.ordercount = this.List.ordercount
 						console.log(res)														
 					}else{
 					uni.showToast({
@@ -238,6 +246,14 @@
 			},
 			onChange(val){
 				console.log(val)
+			},
+			toOrder(val){
+				uni.setStorageSync("customerid",val);
+				console.log("全局缓存客户 ID")
+				console.log("订单跳转")
+				uni.switchTab({
+					url:"../list/orderlist"
+				});
 			},
 			addHistory:function(){
 				let modlist={'customername':'客户姓名','customerphone':'客户电话','customeraddress':'客户地址',

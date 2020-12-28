@@ -10,7 +10,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "君鼎文化主页",
+				"navigationBarTitleText": "捷管理",
 				"enablePullDownRefresh": true
 			}
 		},

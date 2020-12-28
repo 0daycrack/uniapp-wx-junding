@@ -35,6 +35,9 @@
 			<view class="qiun-charts" v-if="showchart">
 				<canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" @touchstart="touchIt($event,'canvasColumn')"></canvas>
 			</view>
+			<view class="qiun-charts" v-if="showchart">
+				<canvas canvas-id="canvasColumnMoney" id="canvasColumnMoney" class="charts"></canvas>
+			</view>
 			<view class="qiun-charts" v-if="showchartperson">
 				<canvas canvas-id="canvasPie" id="canvasPie" class="charts" @touchstart="touchPie"></canvas>
 			</view>
@@ -51,7 +54,7 @@
 	var _self;
 	var canvasObj = {};
 	var canvaColumn = null;
-	var canvasPerson = null;
+	var canvasColumnMoney = null;
 	var canvaPie = null;
 	var api = require('@/common/api.js')
 
@@ -168,14 +171,21 @@
 							categories: [],
 							series: []
 						};
+						let ColumnMoney = {
+							categories: [],
+							series: []
+						};
 						let Pie = {
 							series: []
 						};
+						console.log(res)
 						// let Person={categories:[],series:[]};
 						//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
 						Column.categories = ["新增客户", "新增订单", "每日任务", "通话次数"];
 						Column.series = res['totalseries'];
-						// Person.categories = res['usernamelist']
+						ColumnMoney.categories = res['usernamelist'];
+						ColumnMoney.series = res['usermoneylist'];
+						// // Person.categories = res['usernamelist']
 						Pie.series = res['fromseries']
 						// Person.series = res['countseries']
 						_self.usercuscountlist = res['usercuscountlist']
@@ -184,6 +194,7 @@
 						_self.userordercountlist = res['userordercountlist']
 						_self.showPie("canvasPie", Pie)
 						_self.showColumn("canvasColumn", Column);
+						_self.showColumn("canvasColumnMoney",ColumnMoney)
 
 					},
 					fail: () => {
@@ -235,29 +246,6 @@
 					}
 				});
 
-			},
-			showPie(canvasId, chartData) {
-				canvaPie = new uCharts({
-					$this: _self,
-					canvasId: canvasId,
-					type: 'pie',
-					fontSize: 11,
-					legend: {
-						show: true
-					},
-					background: '#FFFFFF',
-					pixelRatio: _self.pixelRatio,
-					series: chartData.series,
-					animation: true,
-					width: _self.cWidth * _self.pixelRatio,
-					height: _self.cHeight * _self.pixelRatio,
-					dataLabel: true,
-					extra: {
-						pie: {
-							lableWidth: 15
-						}
-					},
-				});
 			},
 			showPie(canvasId, chartData) {
 				canvaPie = new uCharts({

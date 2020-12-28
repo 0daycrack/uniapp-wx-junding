@@ -401,7 +401,7 @@
 						ordermoney      : this.ordermoney,
 						ordernumber		:params['ordernumber'],
 						orderdate       :this.date,
-						ordervalue: this.ordervalue,
+						ordervalue: 	this.ordervalue,
 						orderremark        : params['desc'],
 						orderdepositflag :this.moneypicker[this.moneyindex],
 						stockid				:this.stockid
