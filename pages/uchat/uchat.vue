@@ -36,7 +36,7 @@
 				<canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" @touchstart="touchIt($event,'canvasColumn')"></canvas>
 			</view>
 			<view class="qiun-charts" v-if="showchart">
-				<canvas canvas-id="canvasColumnMoney" id="canvasColumnMoney" class="charts"></canvas>
+				<canvas canvas-id="canvasColumnMoney" id="canvasColumnMoney" class="charts" @touchstart="touchLineA" @touchmove="moveLineA" @touchend="touchEndLineA" disable-scroll=true></canvas>
 			</view>
 			<view class="qiun-charts" v-if="showchartperson">
 				<canvas canvas-id="canvasPie" id="canvasPie" class="charts" @touchstart="touchPie"></canvas>
@@ -268,6 +268,21 @@
 							lableWidth: 15
 						}
 					},
+				});
+			},
+			touchLineA(e){
+				canvasObj["canvasColumnMoney"].scrollStart(e);
+			},
+			moveLineA(e) {
+				canvasObj["canvasColumnMoney"].scroll(e);
+			},
+			touchEndLineA(e) {
+				canvasObj["canvasColumnMoney"].scrollEnd(e);
+				//下面是toolTip事件，如果滚动后不需要显示，可不填写
+				canvasObj["canvasColumnMoney"].showToolTip(e, {
+					format: function (item, category) {
+						return category + ' ' + item.name + ':' + item.data 
+					}
 				});
 			},
 			updatePersonData: function(obj, type) {

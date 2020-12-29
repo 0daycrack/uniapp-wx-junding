@@ -42,12 +42,15 @@
 						</view>
 						<!-- <view class="bg-gradual-red radius" v-if="item.customeractive=='0'">类型：未成交</view>
 						<view class="bg-gradual-green radius" v-if="item.customeractive=='1'">类型：已成交</view> -->
-						<view>客户姓名：{{item.customername}}</view>
-						<view class="text-gray ">
+						<view class="cuIcon-peoplelist">客户姓名：{{item.customername}}</view>
+						<view class="cuIcon-phone text-gray ">
 							 客户电话：{{item.customerphone}}
 						</view>
-						<view class="text-gray ">
-							 客户年龄：{{item.customerold}}
+						<view class="cuIcon-rank text-gray ">
+							 客户类型：{{item.customerfilter}}
+						</view>
+						<view class="cuIcon-global text-gray ">
+							 客户来源：{{item.customerfrom}}
 						</view>
 					</view>
 					<view class="action">

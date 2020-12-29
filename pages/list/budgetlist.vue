@@ -39,21 +39,21 @@
 			<view class="cu-list menu card-menu margin-top-sm">				
 				<navigator v-for="(item,i) in list" :key="i" class="cu-item" >
 					<view class="content padding-tb-sm">
-						<view class="bg-gradual-red radius" v-if="item.tradetype=='支出'">类型：{{item.tradetype}}</view>
-						<view class="bg-gradual-green radius" v-if="item.tradetype=='收入'">类型：{{item.tradetype}}</view>
-						<view class="text-bold ">
+						<view class="cuIcon-list bg-gradual-red radius text-bold" v-if="item.tradetype=='支出'">类型：{{item.tradetype}}</view>
+						<view class="cuIcon-list bg-gradual-green radius text-bold" v-if="item.tradetype=='收入'">类型：{{item.tradetype}}</view>
+						<view class="cuIcon-cascades text-grey ">
 							 收支分类：{{item.trademode}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-refund text-grey ">
 							 收支金额：{{item.trademoney}}
 						</view>
-						<view class="text-gray "v-if="item.trademode=='订单'">
+						<view class="cuIcon-recharge text-grey "v-if="item.trademode=='订单'">
 							 定金金额：{{item.tradedeposit}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-tag text-grey ">
 							 收支方式：{{item.trademethod}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-calendar text-grey ">
 							 日期：{{item.createtime}}
 						</view>
 					</view>

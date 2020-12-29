@@ -30,11 +30,11 @@
 			<view class="cu-list menu card-menu margin-top-sm">
 				<navigator v-for="(item,i) in list" :key="i" class="cu-item" :url="'../detail/stockdetail?stockid=' + item.stockid">
 					<view class="content padding-tb-sm">
-						<view>库存名称：{{item.stockname}}</view>
-						<view class="text-gray ">
+						<view class="cuIcon-goodsnew">库存名称：{{item.stockname}}</view>
+						<view class="cuIcon-order text-gray ">
 							 库存数量：{{item.stocknumber}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-time text-gray ">
 							 更新日期：{{item.modifytime}}
 						</view>
 					</view>

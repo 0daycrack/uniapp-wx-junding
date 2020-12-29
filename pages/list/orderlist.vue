@@ -29,8 +29,8 @@
 		<scroll-view id="scroll" scroll-y = "true" :style="{height:scrollHeight}">
 			<view class="cu-list menu card-menu margin-top-sm">
 				<navigator v-for="(item,i) in list" :key="i" class="cu-item" :url="'../detail/orderdetail?orderid=' + item.orderid">
-					<view class="content padding-tb-sm">
-						<view class="cu-capsule radius shadow-lg">
+					<view class="content padding-tb-sm ">
+						<view class="cu-capsule radius">
 							<view class="cu-tag bg-red">订单状态</view>
 							<view class="cu-tag line-cyan" v-if="item.ordercomplete=='0'">未完成</view>
 							<view class="cu-tag line-red" v-if="item.ordercomplete=='1'">已完成</view>
@@ -38,22 +38,22 @@
 						</view>
 						<!-- <view class="bottom-state-nc" v-if="item.ordercomplete=='0'">订单状态：未完成</view>
 						<view class="bottom-state-c" v-if="item.ordercomplete=='1'">订单状态：已完成</view> -->
-						<view class="text-gray ">
+						<view class="cuIcon-peoplelist">
 							  客户姓名：{{item.customername}}
 						</view>
-						<view class="text-gray">
+						<view class="cuIcon-goodsfavor text-gray">
 							 商品名称：{{item.stockname}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-order  text-gray ">
 							 订单数量：{{item.ordernumber}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-recharge text-gray ">
 							 订单金额：{{item.ordermoney}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-time text-gray ">
 							 下订日期：{{item.orderdate}}
 						</view>
-						<view class="text-gray ">
+						<view class="cuIcon-post text-gray ">
 							 订单备注：{{item.orderremark}}
 						</view>
 					</view>
